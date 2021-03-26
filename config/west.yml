@@ -5,7 +5,7 @@ manifest:
   projects:
     - name: zmk
       remote: krikun98
-      revision: main
+      revision: zephyr-2.5-upgrade
       import: app/west.yml
   self:
     path: config
