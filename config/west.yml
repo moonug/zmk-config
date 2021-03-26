@@ -2,9 +2,11 @@ manifest:
   remotes:
     - name: krikun98
       url-base: https://github.com/krikun98
+    - name: petejohanson
+      url-base: https://github.com/petejohanson
   projects:
     - name: zmk
-      remote: krikun98
+      remote: petejohanson
       revision: zephyr-2.5-upgrade
       import: app/west.yml
   self:
