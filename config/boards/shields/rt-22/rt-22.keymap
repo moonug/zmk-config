@@ -49,28 +49,28 @@
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |     | NMLK |  /  |  7  |  8  |  9  |  -  |   | MUT  | VOLD | VOLU | PRSC | PAUS | SCLK |     |
-//       | CTRL |  *  |  4  |  5  |  6  |  +  |   | LEFT | DOWN |  UP  | RGHT | INS  | APP |
-//       |      |  0  |  1  |  2  |  3  |  .  |   | HOME | END  | PGUP | PGDN | CLCK |     |
+// |     | NMLK |  /  |  7  |  8  |  9  |  -  |   | MUT  | VOLD | VOLU | PRSC | PAUS  | SCLK |     |
+//       | CTRL |  *  |  4  |  5  |  6  |  +  |   | LEFT | DOWN |  UP  | RGHT | LSHFT |      |
+//       |      |  0  |  1  |  2  |  3  |  .  |   | HOME | END  | PGUP | PGDN | CLCK  |      |
 //                          |     |     | ADJ |   | ADJ  |      |      |
                         bindings = <
    &trans &kp KP_NUM      &kp KP_SLASH    &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_MINUS   &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp PSCRN &kp PAUSE_BREAK  &kp SLCK &trans
-          &mt LCTRL EQUAL &kp KP_MULTIPLY &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_PLUS    &kp LEFT    &kp DOWN      &kp UP        &kp RIGHT &kp INS          &mt RCTRL K_APP
+          &mt LCTRL EQUAL &kp KP_MULTIPLY &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_PLUS    &kp LEFT    &kp DOWN      &kp UP        &kp RIGHT &kp LSHFT        &kp RCTRL
           &trans          &kp KP_N0       &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_DOT     &kp HOME    &kp END       &kp PG_UP     &kp PG_DN &kp CAPS         &trans
                                                            &trans &trans &lt ADJ RET   &lt ADJ ESC &trans &trans
                         >;
                 };
                 adjust_layer {
 // -----------------------------------------------------------------------------------------
-// | RST | BLDR |     |     |     |     |     |   |     |     |     |     |     | BLDR | RST |
-//       | BTCLR| BT0 | BT1 | BT2 | BT3 | BT4 |   | BT4 | BT3 | BT2 | BT1 | BT0 | BTCLR|
-//       |      |     |     |     |     |     |   |     |     |     |     |     |      |
-//                          |     |     |     |   |     |     |     |
+// | RST | BLDR  | BT0 | BT1 | BT2 | BT3 | BT4 |   | BT4 | BT3 | BT2 | BT1 | BT0 | BLDR  | RST |
+//       | BTCLR |     |     |     | APP | INS |   | INS | APP |     |     |     | BTCLR |
+//       |       |     |     |     |     |     |   |     |     |     |     |     |       |
+//                           |     |     |     |   |     |     |     |
                         bindings = <
-   &reset &bootloader  &none        &none        &none        &none        &none              &none        &none        &none        &none        &none         &bootloader &reset
-          &bt BT_CLR   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4       &bt BT_SEL 4 &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0  &bt BT_CLR
-          &none        &none        &none        &none        &none        &none              &none        &none        &none        &none        &none         &none
-                                                                    &trans &none &trans   &trans &none &trans
+   &reset &bootloader &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &bt BT_SEL 4 &bt BT_SEL 3 &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0  &bootloader &reset
+          &bt BT_CLR  &none        &none        &none        &kp K_APP    &kp INS        &kp INS      &kp K_APP    &none        &none        &none         &bt BT_CLR
+          &none       &none        &none        &none        &none        &none          &none        &none        &none        &none        &none         &none
+                                                                   &trans &none &trans   &trans &none &trans
                         >;
                 };
         };
