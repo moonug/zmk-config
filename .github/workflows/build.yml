@@ -2,12 +2,11 @@ on:
  pull_request:
     types: [opened, reopened]
     branches:
-      - main   
+      - rt-22-jian-like
  workflow_dispatch:
  push:
     branches:    
-      - 'master'
-      - 'rc'
+      - 'rt-22-jian-like'
     paths:
       - '.github/**'
       - 'config/**'
