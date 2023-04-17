@@ -15,7 +15,7 @@
 
 &lt {
     quick_tap_ms = <200>;
-    flavor = "tap-preferred";
+    flavor = "balanced";
 };
 
 &mt {
