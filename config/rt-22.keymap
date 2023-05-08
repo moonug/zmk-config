@@ -20,10 +20,37 @@
 
 &mt {
     quick_tap_ms = <200>;
-    flavor = "tap-preferred";
+    flavor = "balanced";
 };
 
 / {
+
+    combos {
+        compatible = "zmk,combos";
+        combo_esc_r {
+            timeout-ms = <50>;
+            key-positions = <4 5>;
+            bindings = <&kp ESC>;
+        };
+        combo_esc_l {
+            timeout-ms = <50>;
+            key-positions = <8 9>;
+            bindings = <&kp ESC>;
+        };
+        combo_caps_l {
+            timeout-ms = <50>;
+            key-positions = <3 4>;
+            bindings = <&kp CAPS>;
+        };
+        combo_caps_r {
+            timeout-ms = <50>;
+            key-positions = <9 10>;
+            bindings = <&kp CAPS>;
+        };
+    };
+
+
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -35,10 +62,10 @@
             //                               | RSE | SPC | LWR |   | LWR | SPC | RSE |
 
             bindings = <
-&none  &kp GRAVE  &mt LALT Q  &mt LCTRL W    &lt 2 E          &lt 1 R   &mt LCTRL T   &mt LCTRL Y          &lt 1 U      &lt 2 I    &mt RCTRL O     &mt RALT P  &none  &none
-           &none  &mt LALT A  &mt LCTRL S    &lt 2 D          &lt 1 F   &mt LCTRL G   &mt LCTRL H          &lt 1 J      &lt 2 K    &mt RCTRL L  &mt RALT SEMI  &none
-           &none  &mt LALT Z  &mt LCTRL X    &lt 1 C          &lt 2 V   &mt LCTRL B   &mt LCTRL N          &lt 2 M  &lt 1 COMMA  &mt RCTRL DOT  &mt RALT FSLH  &none
-                                           &lt 3 TAB  &mt LSHFT SPACE  &mt LGUI RET  &mt RGUI ESC  &mt RSHFT SPACE   &lt 3 CAPS
+&none  &none  &mt LALT Q  &mt LCTRL W    &lt 2 E          &lt 1 R   &mt LCTRL T   &mt LCTRL Y          &lt 1 U      &lt 2 I    &mt LCTRL O     &mt RALT P  &none  &none
+           &none  &mt LALT A  &mt LCTRL S    &lt 2 D          &lt 1 F   &mt LCTRL G   &mt LCTRL H          &lt 1 J      &lt 2 K    &mt LCTRL L  &mt RALT SEMI  &none
+           &none  &mt LALT Z  &mt LCTRL X    &lt 1 C          &lt 2 V   &mt LCTRL B   &mt LCTRL N          &lt 2 M  &lt 1 COMMA  &mt LCTRL DOT  &mt RALT FSLH  &none
+                                           &lt 2 TAB  &mt LSHFT SPACE  &mt LGUI RET  &mt RGUI RET  &mt RSHFT SPACE   &lt 2 BSPC
             >;
         };
 
@@ -53,7 +80,7 @@
 &trans   &none  &mt LALT GRAVE  &mt LCTRL UNDER  &kp SINGLE_QUOTE   &kp LEFT_BRACE  &mt LCTRL LEFT_BRACKET  &mt RCTRL RIGHT_BRACKET  &kp RIGHT_BRACE  &kp PLUS  &mt RCTRL MINUS  &mt RALT EQUAL  &none  &none
         &trans   &mt LALT EXCL     &mt LCTRL AT          &kp HASH         &kp DLLR         &mt LCTRL PRCNT                &kp CARET         &kp AMPS  &kp STAR         &kp LPAR        &kp RPAR  &none
         &trans          &kp N1           &kp N2            &kp N3         &kp LPAR      &mt LCTRL KP_COMMA         &mt RCTRL KP_DOT         &kp RPAR    &kp N8           &kp N9   &mt RALT BSLH  &none
-                                                           &trans  &mt LSHFT SPACE                  &trans                   &trans   &mt RSHFT BSPC    &trans
+                                                           &lt ADJ TAB  &mt LSHFT SPACE                  &trans                   &trans   &trans   &lt ADJ BSPC
             >;
         };
 
